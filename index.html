@@ -1,4 +1,4 @@
-a<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -595,12 +595,15 @@ a<!DOCTYPE html>
     </style>
 </head>
 <body>
+    <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-spinner"></div>
     </div>
 
+    <!-- Background Particles -->
     <div class="particles-container" id="particles"></div>
 
+    <!-- Navigation Dots -->
     <div class="nav-dots" id="navDots">
         <div class="nav-dot active" data-section="0" title="Cover"></div>
         <div class="nav-dot" data-section="1" title="Opening"></div>
@@ -611,6 +614,7 @@ a<!DOCTYPE html>
         <div class="nav-dot" data-section="6" title="Confirmation"></div>
     </div>
 
+    <!-- ========== COVER PAGE ========== -->
     <div class="cover-page" id="coverPage">
         <div class="envelope-bg"></div>
         <div class="envelope-pattern"></div>
@@ -686,8 +690,10 @@ a<!DOCTYPE html>
         <div class="particle" style="top: 50%; left: 5%; animation-delay: 2.5s;"></div>
     </div>
 
+    <!-- ========== MAIN CONTENT ========== -->
     <main class="main-content" id="mainContent">
         
+        <!-- ===== SECTION 1: OPENING / SALAM ===== -->
         <section class="section section-dark" id="section-opening">
             <div class="text-center max-w-lg mx-auto px-4 w-full">
                 <div class="reveal">
@@ -732,6 +738,7 @@ a<!DOCTYPE html>
             </div>
         </section>
 
+        <!-- ===== SECTION 2: QUOTE / MOTIVATION ===== -->
         <section class="section section-warm" id="section-about">
             <div class="max-w-lg mx-auto px-4 text-center w-full">
                 <div class="reveal">
@@ -803,6 +810,7 @@ a<!DOCTYPE html>
             </div>
         </section>
 
+        <!-- ===== SECTION 3: EVENT DETAILS ===== -->
         <section class="section section-dark" id="section-details">
             <div class="max-w-lg mx-auto px-4 w-full">
                 <div class="text-center mb-8 reveal">
@@ -870,6 +878,7 @@ a<!DOCTYPE html>
             </div>
         </section>
 
+        <!-- ===== SECTION 5: GALLERY VILLA & TEMA ===== -->
         <section id="section-gallery" class="section section-dark">
             <div class="max-w-4xl mx-auto px-4 w-full text-center">
                 <div class="reveal mb-8">
@@ -937,6 +946,7 @@ a<!DOCTYPE html>
             </div>
         </section>
 
+        <!-- ===== SECTION 6: CONFIRMATION ===== -->
         <section class="section section-warm py-16" id="section-rsvp">
             <div class="max-w-lg mx-auto px-4 w-full">
                 <div class="text-center mb-8 reveal">
@@ -965,6 +975,7 @@ a<!DOCTYPE html>
             </div>
         </section>
 
+        <!-- ===== FOOTER / CLOSING ===== -->
         <section class="section section-dark" id="section-closing" style="min-height: 60vh;">
             <div class="text-center max-w-lg mx-auto px-4 w-full">
                 <div class="reveal">
@@ -1008,16 +1019,12 @@ a<!DOCTYPE html>
         </section>
     </main>
 
+    <!-- Back to Top -->
     <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="backToTop" class="fixed bottom-2 right-20 z-50 w-10 h-10 rounded-full bg-[#1a1209] border border-[rgba(212,168,83,0.3)] text-[#d4a853] flex items-center justify-center opacity-0 transition-all duration-300 hover:border-[#d4a853]" style="display: none;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="18 15 12 9 6 15"/>
         </svg>
     </button>
-
-    <audio id="bgMusic" loop>
-        <source src="music.mp3" type="audio/mpeg">
-        Browser Anda tidak mendukung elemen audio.
-    </audio>
 
     <script>
         // Global variable untuk menyimpan nama tamu
@@ -1042,18 +1049,10 @@ a<!DOCTYPE html>
             }, 1500);
         });
 
-        // ===== OPEN INVITATION (Updated with Audio) =====
+        // ===== OPEN INVITATION =====
         function openInvitation() {
             const cover = document.getElementById('coverPage');
             const main = document.getElementById('mainContent');
-            const audio = document.getElementById('bgMusic');
-            
-            // Start playing audio
-            if (audio) {
-                audio.play().catch(error => {
-                    console.log("Autoplay was prevented by browser.");
-                });
-            }
             
             cover.classList.add('opened');
             setTimeout(() => {
